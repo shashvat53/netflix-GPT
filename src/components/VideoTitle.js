@@ -6,10 +6,10 @@ const VideoTitle = ({ title, overview }) => {
         <p className="text-lg py-4 w-1/3">{overview}</p>
         <div className="flex gap-3">
           <button className="text-lg font-semibold p-[4px_18px] bg-white rounded text-black">
-            Play
+            <i className="fa-solid fa-play"></i> Play
           </button>
           <button className="text-lg font-semibold p-[4px_18px] bg-transparent border rounded">
-            More Info
+            <i className="fa-solid fa-circle-info"></i> More Info
           </button>
         </div>
       </div>

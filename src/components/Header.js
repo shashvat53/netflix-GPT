@@ -56,11 +56,11 @@ const Header = () => {
 
       {User && (
         <div className="flex items-center gap-[16px] pr-4">
-          <h1 className="text-white text-2xl">Hii, {User.email}</h1>
+          <h1 className="text-white text- xl">Hii, {User.email}</h1>
 
           <button
             onClick={handleSignout}
-            className="p-[6px_18px] text-white hover:bg-[#E50914] font-semibold text-xl border border-1px rounded"
+            className="text-lg font-semibold p-[4px_18px] text-white hover:bg-[#E50914] border border-1px rounded"
           >
             Sign out
           </button>

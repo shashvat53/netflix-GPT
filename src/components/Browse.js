@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRatedMovies from "../hooks/useTopRated";
@@ -5,6 +6,7 @@ import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import GptSearchPage from "./GptSearchPage";
 
 const Browse = () => {
   // console.log("Browse render...");
@@ -13,11 +15,19 @@ const Browse = () => {
   useTopRatedMovies();
   useUpcomingMovies();
 
+  const GptSearch = useSelector((store) => store.gpt.showGptSearch);
+
   return (
-    <div className="overflow--yscroll no-scrollbar aspect-[16/9]">
+    <div className="">
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {GptSearch ? (
+        <GptSearchPage />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };

@@ -12,10 +12,8 @@ export const API_Option = {
 
 export const IMG_URL = "https://image.tmdb.org/t/p/w500/";
 
-// fetch(
-//   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
-//   options
-// )
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
+export const SUPPORTED_LANGUAGES = [
+  { identifire: "en", name: "English" },
+  { identifire: "hindi", name: "Hindi" },
+  { identifire: "spanish", name: "Spanish" },
+];

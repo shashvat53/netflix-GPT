@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Logo } from "../utils/constant";
+import { Logo, SUPPORTED_LANGUAGES } from "../utils/constant";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import { toggleGptSearch } from "../utils/GptSlice";
+import { chnageLanguse } from "../utils/ConfigSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -35,8 +37,6 @@ const Header = () => {
 
   // const dispatch = useDispatch();
   const User = useSelector((store) => store.user);
-  // console.log(User);
-  useNowPlayingMovies();
 
   const handleSignout = () => {
     signOut(auth)
@@ -49,14 +49,46 @@ const Header = () => {
       });
   };
 
+  const handleGptSerachClick = () => {
+    dispatch(toggleGptSearch());
+  };
+
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
+  const handleLanguge = (e) => {
+    dispatch(chnageLanguse(e.target.value));
+  };
+
   return (
     <div className=" absolute w-full bg-gradient-to-b from-black flex items-center justify-between z-10 ">
       <img src={Logo} alt="logo" className="w-[250px] " />
       {/* {user && <h1 className="text-white text-2xl">{user.email}</h1>} */}
 
       {User && (
-        <div className="flex items-center gap-[16px] pr-4">
-          <h1 className="text-white text- xl">Hii, {User.email}</h1>
+        <div className="flex items-center gap-[20px] pr-4">
+          {showGptSearch && (
+            <select onChange={handleLanguge}>
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option value={lang.identifire}>{lang.name}</option>
+              ))}
+            </select>
+          )}
+
+          <button
+            onClick={handleGptSerachClick}
+            className="text-white hover:text-[#ccc] "
+          >
+            {showGptSearch ? (
+              "Home"
+            ) : (
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-magnifying-glass"></i>
+                <span className="text-lg ">Search</span>
+              </div>
+            )}
+          </button>
+
+          {/* <h1 className="text-white text- xl">Hii, {User.email}</h1> */}
 
           <button
             onClick={handleSignout}

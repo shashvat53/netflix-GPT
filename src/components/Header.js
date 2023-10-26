@@ -61,29 +61,34 @@ const Header = () => {
 
   return (
     <div className=" absolute w-full bg-gradient-to-b from-black flex items-center justify-between z-10 ">
-      <img src={Logo} alt="logo" className="w-[250px] " />
+      <img src={Logo} alt="logo" className="w-[150px] md:w-[250px] " />
       {/* {user && <h1 className="text-white text-2xl">{user.email}</h1>} */}
 
       {User && (
-        <div className="flex items-center gap-[20px] pr-4">
+        <div className="flex items-center gap-[16px] md:gap-[20px] pr-4">
           {showGptSearch && (
-            <select onChange={handleLanguge}>
+            <select
+              onChange={handleLanguge}
+              className="text-[12px] md:text-[16px]"
+            >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option value={lang.identifire}>{lang.name}</option>
+                <option key={lang.identifire} value={lang.identifire}>
+                  {lang.name}
+                </option>
               ))}
             </select>
           )}
 
           <button
             onClick={handleGptSerachClick}
-            className="text-white hover:text-[#ccc] "
+            className="text-white hover:text-[#ccc]"
           >
             {showGptSearch ? (
               "Home"
             ) : (
               <div className="flex items-center gap-2">
                 <i className="fa-solid fa-magnifying-glass"></i>
-                <span className="text-lg ">Search</span>
+                <span className="text-[12px] md:text-lg ">Search</span>
               </div>
             )}
           </button>
@@ -92,7 +97,7 @@ const Header = () => {
 
           <button
             onClick={handleSignout}
-            className="text-lg font-semibold p-[4px_18px] text-white hover:bg-[#E50914] border border-1px rounded"
+            className="text-[12px] md:text-lg font-semibold p-[2px_6px] md:p-[4px_18px] text-white hover:bg-[#E50914] border border-1px rounded"
           >
             Sign out
           </button>

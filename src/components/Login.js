@@ -73,7 +73,7 @@ const Login = () => {
         <div className="w-full h-[100vh] bg-[rgba(0,0,0,0.5)]">
           <div className="">
             <Header />
-            <div className="flex justify-center items-center pt-[12%]">
+            <div className="flex justify-center items-center pt-[50%] md:pt-[12%]">
               <form
                 onSubmit={(e) => e.preventDefault()}
                 className="flex gap-[25px] flex-col w-[400px] p-[40px] bg-[rgba(0,0,0,0.6)]"

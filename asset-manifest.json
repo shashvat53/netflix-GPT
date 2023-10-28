@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Netflix-GPT/static/css/main.9fecbde1.css",
-    "main.js": "/Netflix-GPT/static/js/main.7788f926.js",
-    "static/js/787.8e11e584.chunk.js": "/Netflix-GPT/static/js/787.8e11e584.chunk.js",
-    "index.html": "/Netflix-GPT/index.html",
-    "main.9fecbde1.css.map": "/Netflix-GPT/static/css/main.9fecbde1.css.map",
-    "main.7788f926.js.map": "/Netflix-GPT/static/js/main.7788f926.js.map",
-    "787.8e11e584.chunk.js.map": "/Netflix-GPT/static/js/787.8e11e584.chunk.js.map"
+    "main.css": "/netflix-GPT/static/css/main.9fecbde1.css",
+    "main.js": "/netflix-GPT/static/js/main.e8018b5e.js",
+    "static/js/787.8e11e584.chunk.js": "/netflix-GPT/static/js/787.8e11e584.chunk.js",
+    "index.html": "/netflix-GPT/index.html",
+    "main.9fecbde1.css.map": "/netflix-GPT/static/css/main.9fecbde1.css.map",
+    "main.e8018b5e.js.map": "/netflix-GPT/static/js/main.e8018b5e.js.map",
+    "787.8e11e584.chunk.js.map": "/netflix-GPT/static/js/787.8e11e584.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9fecbde1.css",
-    "static/js/main.7788f926.js"
+    "static/js/main.e8018b5e.js"
   ]
 }

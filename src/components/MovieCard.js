@@ -5,8 +5,8 @@ const MovieCard = ({ posterPath }) => {
   //   console.log(posterPath);
   return (
     <div>
-      <div className="md:w-[150px] w-[120px]">
-        <img src={IMG_URL + posterPath} alt="card_photo" />
+      <div className="md:w-[150px] w-[120px] cursor-pointer  transform transition duration-500 hover:scale-110">
+        <img src={IMG_URL + posterPath} alt="card_photo " />
       </div>
     </div>
   );
